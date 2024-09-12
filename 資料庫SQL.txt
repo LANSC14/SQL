@@ -1,0 +1,237 @@
+Create database 112dba11 character set utf8 collate utf8_unicode_ci;
+
+Use 112dba11;
+
+
+CREATE TABLE keeper
+(
+    `keeperId` Int NOT NULL AUTO_INCREMENT,
+    `name` varchar(100),
+    `salary` Int,
+    `position` varchar(100),
+    `department` varchar(100),
+    PRIMARY KEY (keeperId)
+);
+
+
+CREATE TABLE animal
+(
+    `animalId` Int NOT NULL AUTO_INCREMENT,
+    `img` VARCHAR(100),
+    `ch_name` varchar(100),
+    `Popularity` varchar(100),
+    PRIMARY KEY (animalId)
+ );
+
+
+CREATE TABLE park
+(
+    `parkId`Int NOT NULL AUTO_INCREMENT,
+    `name` varchar(100),
+    `size` varchar(100),
+    `feeding_show` varchar(100),
+    PRIMARY KEY (parkId)
+ );
+
+
+CREATE TABLE caresfor
+(
+    `keeperId`Int,
+    `animalId`Int,
+    PRIMARY KEY (`keeperId`,`animalId`),
+    FOREIGN KEY (`keeperId`) REFERENCES `keeper`(`keeperId`),
+    FOREIGN KEY (`animalId`) REFERENCES `animal`(`animalId`)
+);
+
+CREATE TABLE reside
+(
+    `animalId`Int,
+    `parkId`Int,
+    PRIMARY KEY (`animalId`,`parkId`),
+    FOREIGN KEY (`animalId`) REFERENCES `animal`(`animalId`),
+    FOREIGN KEY (`parkId`) REFERENCES `park`(`parkId`)
+);
+
+
+INSERT into `park`VALUES(1,'臺灣動物區','中','09:00a.m.');
+INSERT into `park`VALUES(2,'兒童動物區','中','09:30a.m.');
+INSERT into `park`VALUES(3,'大貓熊館','小','10:00a.m.');
+INSERT into `park`VALUES(4,'熱帶雨林區','大','11:00a.m.');
+INSERT into `park`VALUES(5,'非洲動物區','大','12:00p.m.');
+INSERT into `park`VALUES(6,'鳥園','中','12:30p.m.');
+INSERT into `park`VALUES(7,'溫帶動物區','大','02:00p.m.');
+INSERT into `park`VALUES(8,'企鵝館','小','02:30p.m.');
+INSERT into `park`VALUES(9,'無尾熊館','小','03:00p.m.');
+INSERT into `park`VALUES(10,'沙漠動物區','小','04:00p.m.');
+INSERT into `park`VALUES(11,'澳洲動物區','小','05:00p.m.');
+
+INSERT into animal value(1,'image/mountain.png','山羌','4629');
+INSERT into animal value(2,'image/pig.png','臺灣野豬','2121');
+INSERT into animal value(3,'image/deer.png','梅花鹿','3888');
+INSERT into animal value(4,'image/monkey.png','台灣獼猴','1868');
+INSERT into animal value(5,'image/pangolin.png','穿山甲','2319');
+INSERT into animal value(6,'image/clouded.png','雲豹','3587');
+INSERT into animal value(7,'image/otter.png','歐亞水獺','2897');
+INSERT into animal value(8,'image/bear.png','臺灣黑熊','4235');
+INSERT into animal value(9,'image/long-maned.png','臺灣長鬃山羊','2972');
+
+INSERT into animal value(10,'image/mini-horse.png','迷你馬','2262');
+INSERT into animal value(11,'image/donkey.png','驢子','1754');
+INSERT into animal value(12,'image/lemur.png','狐猴','4838');
+INSERT into animal value(13,'image/coati.png','長鼻浣熊','4087');
+INSERT into animal value(14,'image/fox.png','狐獴','3232');
+INSERT into animal value(15,'image/coon.png','浣熊','3831');
+INSERT into animal value(16,'image/alpaca.png','羊駝','3056');
+INSERT into animal value(17,'image/flamingo.png','紅鶴','4520');
+INSERT into animal value(18,'image/whitehand.png','白手長臂猿','1151');
+
+INSERT into animal value(19,'image/bearcat.png','熊貓','4673');
+
+INSERT into animal value(20,'image/water.png','水豚','1742');
+INSERT into animal value(21,'image/small-clawed.png','小爪水獺','2392');
+INSERT into animal value(22,'image/anteater.png','大食蟻獸','3456');
+INSERT into animal value(23,'image/blackcrested.png','黑冠松鼠猴','1324');
+INSERT into animal value(24,'image/malayan.png','馬來貘','4052');
+INSERT into animal value(25,'image/aye-aye.png','指猴','2499');
+INSERT into animal value(26,'image/gibbon.png','大長臂猿','3420');
+INSERT into animal value(27,'image/ape.png','人猿','2835');
+INSERT into animal value(28,'image/leopard.png','花豹','4452');
+INSERT into animal value(29,'image/hornbill.png','大犀鳥','3278');
+INSERT into animal value(30,'image/elephant.png','亞洲象','1824');
+INSERT into animal value(31,'image/tiger.png','孟加拉虎','3637');
+
+INSERT into animal value(32,'image/zebra.png','斑馬','2731');
+INSERT into animal value(33,'image/giraffe.png','長頸鹿','4195');
+INSERT into animal value(34,'image/antelope.png','伊蘭羚羊','1748');
+INSERT into animal value(35,'image/lion.png','獅子','2462');
+INSERT into animal value(36,'image/rhinoceros.png','白犀牛','4647');
+INSERT into animal value(37,'image/chimpanzee.png','黑猩猩','3985');
+INSERT into animal value(38,'image/hippo.png','河馬','1174');
+INSERT into animal value(39,'image/impala.png','斑哥羚羊','3827');
+INSERT into animal value(40,'image/gorilla.png','大猩猩','3289');
+INSERT into animal value(41,'image/ele.png','非洲象','2729');
+INSERT into animal value(42,'image/east.png','東非狒狒','1838');
+
+INSERT into animal value(43,'image/pelican.png','鵜鶘','3832');
+INSERT into animal value(44,'image/wild.png','雁鴨','4229');
+INSERT into animal value(45,'image/dove.png','鳩鴿','2853');
+INSERT into animal value(46,'image/red.png','紅䴉','4342');
+INSERT into animal value(47,'image/spoonbill.png','黑面琵鷺','4677');
+INSERT into animal value(48,'image/hawk.png','鷹鷲','2211');
+INSERT into animal value(49,'image/parrot.png','鸚鵡','3559');
+INSERT into animal value(50,'image/crane.png','鶴','1575');
+
+INSERT into animal value(51,'image/horse.png','蒙古野馬','4029');
+INSERT into animal value(52,'image/sulcata.png','蘇卡達象龜','4641');
+INSERT into animal value(53,'image/bison.png','美洲野牛','1289');
+INSERT into animal value(54,'image/alligator.png','馬來長吻鱷','3941');
+INSERT into animal value(55,'image/beaver.png','河狸','2593');
+INSERT into animal value(56,'image/wolf.png','灰狼','1186');
+INSERT into animal value(57,'image/mou.png','美洲山獅','1570');
+INSERT into animal value(58,'image/littlebear.png','小貓熊','3281');
+INSERT into animal value(59,'image/blonkbear.png','棕熊','1973');
+
+
+INSERT into animal value(60,'image/penguin.png','企鵝','1997');
+
+INSERT into animal value(61,'image/koala.png','無尾熊','3591');
+INSERT into animal value(62,'image/antelope.png','弓角羚羊','2263');
+INSERT into animal value(63,'image/ass.png','非洲野驢','3666');
+INSERT into animal value(64,'image/bactrian.png','雙峰駱駝','2274');
+INSERT into animal value(65,'image/dromedary.png','單峰駱駝','4113');
+
+INSERT into animal value(66,'image/cassowary.png','食火雞','2282');
+INSERT into animal value(67,'image/kangaroo.png','大灰袋鼠','1902');
+
+INSERT into keeper VALUE(1,'藍勝金',22000,'總負責人','台灣動物區');
+INSERT into keeper VALUE(2,'劉熊熊',18000,'總負責人','兒童動物區');
+INSERT into keeper VALUE(3,'吳餅虛',12000,'總負責人','大貓熊館');
+INSERT into keeper VALUE(4,'游博亞',52000,'總負責人','熱帶雨林區');
+INSERT into keeper VALUE(5,'陳小亦',81000,'總負責人','非洲動物區');
+INSERT into keeper VALUE(6,'楊中朋',32000,'總負責人','鳥園');
+INSERT into keeper VALUE(7,'劉大錩',99000,'總負責人','溫帶動物區');
+INSERT into keeper VALUE(8,'蘿小莉',69000,'總負責人','企鵝館');
+INSERT into keeper VALUE(9,'盧哲臭',7800,'總負責人','無尾熊館');
+INSERT into keeper VALUE(10,'盧臭安',8700,'總負責人','沙漠動物區');
+INSERT into keeper VALUE(11,'臭哲安',6900,'總負責人','澳洲動物區');
+
+INSERT into reside VALUES(1,1);
+INSERT into reside VALUES(2,1);
+INSERT into reside VALUES(3,1);
+INSERT into reside VALUES(4,1);
+INSERT into reside VALUES(5,1);
+INSERT into reside VALUES(6,1);
+INSERT into reside VALUES(7,1);
+INSERT into reside VALUES(8,1);
+INSERT into reside VALUES(9,1);
+INSERT into reside VALUES(10,2);
+INSERT into reside VALUES(11,2);
+INSERT into reside VALUES(12,2);
+INSERT into reside VALUES(13,2);
+INSERT into reside VALUES(14,2);
+INSERT into reside VALUES(15,2);
+INSERT into reside VALUES(16,2);
+INSERT into reside VALUES(17,2);
+INSERT into reside VALUES(18,2);
+INSERT into reside VALUES(19,3);
+INSERT into reside VALUES(20,4);
+INSERT into reside VALUES(21,4);
+INSERT into reside VALUES(22,4);
+INSERT into reside VALUES(23,4);
+INSERT into reside VALUES(24,4);
+INSERT into reside VALUES(25,4);
+INSERT into reside VALUES(26,4);
+INSERT into reside VALUES(27,4);
+INSERT into reside VALUES(28,4);
+INSERT into reside VALUES(29,4);
+INSERT into reside VALUES(30,4);
+INSERT into reside VALUES(31,4);
+INSERT into reside VALUES(32,5);
+INSERT into reside VALUES(33,5);
+INSERT into reside VALUES(34,5);
+INSERT into reside VALUES(35,5);
+INSERT into reside VALUES(36,5);
+INSERT into reside VALUES(37,5);
+INSERT into reside VALUES(38,5);
+INSERT into reside VALUES(39,5);
+INSERT into reside VALUES(40,5);
+INSERT into reside VALUES(41,5);
+INSERT into reside VALUES(42,5);
+INSERT into reside VALUES(43,6);
+INSERT into reside VALUES(44,6);
+INSERT into reside VALUES(45,6);
+INSERT into reside VALUES(46,6);
+INSERT into reside VALUES(47,6);
+INSERT into reside VALUES(48,6);
+INSERT into reside VALUES(49,6);
+INSERT into reside VALUES(50,6);
+INSERT into reside VALUES(51,7);
+INSERT into reside VALUES(52,7);
+INSERT into reside VALUES(53,7);
+INSERT into reside VALUES(54,7);
+INSERT into reside VALUES(55,7);
+INSERT into reside VALUES(56,7);
+INSERT into reside VALUES(57,7);
+INSERT into reside VALUES(58,7);
+INSERT into reside VALUES(59,7);
+INSERT into reside VALUES(60,8);
+INSERT into reside VALUES(61,9);
+INSERT into reside VALUES(62,10);
+INSERT into reside VALUES(63,10);
+INSERT into reside VALUES(64,10);
+INSERT into reside VALUES(65,10);
+INSERT into reside VALUES(66,11);
+INSERT into reside VALUES(67,11);
+
+INSERT into caresfor VALUES(1,1);
+INSERT into caresfor VALUES(2,10);
+INSERT into caresfor VALUES(3,20);
+INSERT into caresfor VALUES(4,30);
+INSERT into caresfor VALUES(5,40);
+INSERT into caresfor VALUES(6,45);
+INSERT into caresfor VALUES(7,55);
+INSERT into caresfor VALUES(8,58);
+INSERT into caresfor VALUES(9,63);
+INSERT into caresfor VALUES(10,65);
+INSERT into caresfor VALUES(11,67);
+
