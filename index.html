@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>動物園</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffffff;
+      }
+      .flex {
+        display: flex;
+      }
+      .column {
+        flex-direction: column;
+      }
+      #myButton {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        text-decoration: none; /* 去掉下滑線 */
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer; /* 手圖案 */
+        transition: background-color 0.8s, transform 0.3s; /* 過度效果 */
+      }
+
+      #myButton:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+      }
+      #scroll-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      #scroll-to-top:hover {
+        background-color: #0056b3;
+      }
+
+      #scroll-to-top span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .image-container {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .image-text,
+      .hover-text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: black; /* 更改顏色 */
+        font-size: 20px;
+        transition: all 0.3s ease;
+        text-align: center;
+        width: 100%;
+      }
+
+      .image-text {
+        bottom: 10%;
+        opacity: 1; /* 確保在非懸停狀態下文字是可見的 */
+      }
+
+      .hover-text {
+        bottom: 50%;
+        opacity: 0; /* 初始狀態下隱藏 '了解更多' 文字 */
+      }
+
+      .image-container:hover .image-text {
+        opacity: 0; /* 懸停時隱藏原始文字 */
+        color: white; /* 懸浮時變為白色 */
+      }
+
+      .image-container:hover .hover-text {
+        bottom: 50%;
+        opacity: 1; /* 懸停時顯示 '了解更多' 文字 */
+        color: white; /* 懸浮時始終為白色 */
+      }
+
+      .image-container:hover .image {
+        filter: brightness(50%); /* 圖片懸停效果 */
+      }
+
+      .image {
+        width: 70%;
+        height: 70%;
+        border-radius: 12%;
+        transition: all 0.3s ease;
+      }
+      .nav-link {
+        color: #000;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div
+        class="flex"
+        style="
+          background-color: rgba(231, 232, 231, 0.5); /* 半透明背景 */
+          backdrop-filter: blur(10px); /* 模糊效果 */
+          -webkit-backdrop-filter: blur(10px); /* 針對舊版Safari瀏覽器的支持 */
+          padding: 20px;
+          height: 80px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 100;
+        "
+      >
+        <a href="index.html" class="flex nav-link">
+          <img
+            src="image/head.png"
+            width="70px"
+            height="70px"
+            style="margin-left: 100px; margin-top: 10px"
+          />
+          <div style="margin-left: 20px; margin-top: 0px">
+            <h1>WLLY ZOO</h1>
+          </div>
+        </a>
+      </div>
+      <div style="height: 120px"></div>
+      <div
+        class="flex"
+        style="justify-content: center; height: 1000px; width: 100%"
+      >
+        <img src="image/bigzoo.png" width="100%" height="100%" />
+      </div>
+
+      <div
+        class="flex"
+        style="height: 200px; justify-content: center; align-items: center"
+      >
+        <h1>⚚ WLLY ZOO怎麼玩 ⚚</h1>
+      </div>
+      <div
+        class="flex"
+        style="
+          flex: 1;
+          text-align: center;
+          padding-left: 40px;
+          padding-right: 40px;
+        "
+      >
+        <div class="image-container" style="margin-left: 100px">
+          <a href="animal1.php">
+            <img src="image/ele.png" class="image" />
+            <span class="image-text">動物專區</span>
+            <span class="hover-text">了解更多</span>
+          </a>
+        </div>
+        <div class="image-container">
+          <a href="care.php">
+            <img src="image/water.png" class="image" />
+            <span class="image-text">照顧關係 </span>
+            <span class="hover-text">了解更多</span>
+          </a>
+        </div>
+        <div class="image-container">
+          <a href="keeper.php">
+            <img src="image/tiger.png" class="image" />
+            <span class="image-text">工作人員</span>
+            <span class="hover-text">了解更多</span>
+          </a>
+        </div>
+        <div class="image-container" style="margin-right: 100px">
+          <a href="park1.html">
+            <img src="image/ape.png" class="image" />
+            <span class="image-text">關於我們</span>
+            <span class="hover-text">了解更多</span>
+          </a>
+        </div>
+      </div>
+      <div style="justify-content: center; height: 500px">
+        <img src="image/pig.gif" width="100%" height="100%" />
+      </div>
+
+      <div
+        class="flex"
+        style="
+          height: 200px;
+          justify-content: center;
+          align-items: center;
+          margin-top: 100px;
+        "
+      >
+        <h1>新鮮事<br />NEWS</h1>
+      </div>
+
+      <div class="flex" style="flex: 1; justify-content: center; height: 200px">
+        <div class="flex">
+          <a
+            href="new_bearcat.html"
+            style="margin: 10px; color: #000; text-decoration: none"
+          >
+            <div>
+              <img
+                src="image/bearcat.png"
+                alt=""
+                width="150px"
+                height="150px"
+                style="border-radius: 12%"
+              />
+            </div>
+            <div style="margin: 10px">【重要公告】<br />㊗︎小熊貓誕生!</div>
+          </a>
+        </div>
+
+        <div class="flex">
+          <a
+            href="new_map.html"
+            style="
+              margin: 10px;
+              color: #000;
+              margin-left: 40px;
+              margin-right: 40px;
+              text-decoration: none;
+            "
+          >
+            <div>
+              <img
+                src="image/map.png"
+                alt=""
+                width="150px"
+                height="150px"
+                style="border-radius: 12%"
+              />
+            </div>
+            <div style="margin: 10px">【重要公告】<br />園區整修(´;ω;`)</div>
+          </a>
+        </div>
+        <div class="flex">
+          <a
+            href="new_shop.html"
+            style="margin: 10px; color: #000; text-decoration: none"
+          >
+            <div>
+              <img
+                src="image/rest.png"
+                alt=""
+                width="150px"
+                height="150px"
+                style="border-radius: 12%"
+              />
+            </div>
+            <div style="margin: 10px">【重要公告】<br />園區新店開幕!</div>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div
+          class="flex"
+          style="
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            margin-bottom: 100px;
+            margin-top: 20px;
+          "
+        >
+          <a
+            href="new.html"
+            id="myButton"
+            onclick="alert('恭喜你成功點擊了按鈕！(*ˇωˇ*人)你將前往新的頁面')"
+          >
+            了解更多！
+          </a>
+        </div>
+      </div>
+
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center; /* 添加此行使得元素在垂直方向上居中 */
+          margin-bottom: 20px;
+        "
+      >
+        <div style="margin: 0 110px; font-size: 32px">動物寫真</div>
+        <div style="margin: 0 50px">
+          <img
+            src="image/alpaca.png"
+            style="width: 250px; height: auto; border-radius: 12%"
+            id="img1"
+          />
+        </div>
+        <div style="margin: 0 50px">
+          <img
+            src="image/deer.png"
+            style="width: 250px; height: auto; border-radius: 12%"
+            id="img2"
+          />
+        </div>
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center; /* 同样在这里添加 */
+          margin-bottom: 50px;
+        "
+      >
+        <div style="margin: 0 50px">
+          <img
+            src="image/flamingo.png"
+            style="width: 250px; height: auto; border-radius: 12%"
+            id="img3"
+          />
+        </div>
+        <div style="margin: 0 50px">
+          <img
+            src="image/otter.png"
+            style="width: 250px; height: auto; border-radius: 12%"
+            id="img4"
+          />
+        </div>
+        <div style="margin: 0 50px">
+          <img
+            src="image/tiger.png"
+            style="width: 250px; height: auto; border-radius: 12%"
+            id="img5"
+          />
+        </div>
+      </div>
+
+      <div style="height: 200px; background-color: #e7e8e7">
+        <div
+          class="flex"
+          style="padding: 20px; justify-content: center; margin-top: 20px"
+        >
+          <div class="flex">
+            <div>
+              <img src="image/head.png" width="70px" height="70px" />
+            </div>
+            <div style="margin-left: 5px; margin-top: 20px; margin-left: 10px">
+              WLLY ZOO
+            </div>
+          </div>
+          <div class="column" style="margin-left: 300px">
+            <div>地址：116台北市文山區新光路二段30號</div>
+            <div>電話：0229382300</div>
+            <div>更新日期 2023-11-17</div>
+          </div>
+        </div>
+        <div>
+          <hr
+            style="border-color: black; border-width: 2px; border-style: solid"
+          />
+          <div class="flex" style="justify-content: center">
+            Copyright © 2023 Zoo Inc. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="scroll-to-top" onclick="scrollToTop()">
+      <span>TOP</span>
+    </button>
+    <script>
+      // 當用戶滾動頁面時，顯示或隱藏按鈕
+      window.onscroll = function () {
+        var button = document.getElementById("scroll-to-top");
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      };
+
+      // 當按鈕被點擊時，滾動到頂部
+      function scrollToTop() {
+        document.body.scrollTop = 0; // 對於一些瀏覽器
+        document.documentElement.scrollTop = 0; // 對於現代瀏覽器
+      }
+      // 圖片路徑數組
+      const galleryImages = [
+        [
+          "image/alligator.png",
+          "image/anteater.png",
+          "image/antelope.png",
+          "image/ape.png",
+          "image/ass.png",
+          "image/aye-aye.png",
+          "image/bactrian.png",
+          "image/bear.png",
+          "image/bearcat.png",
+          "image/beaver.png",
+          "image/bison.png",
+          "image/blackcrested.png",
+          "image/alpaca.png",
+        ],
+        [
+          "image/blonkbear.png",
+          "image/cassowary.png",
+          "image/chimpanzee.png",
+          "image/clouded.png",
+          "image/coati.png",
+          "image/coon.png",
+          "image/crane.png",
+          "image/donkey.png",
+          "image/dove.png",
+          "image/dromedary.png",
+          "image/east.png",
+          "image/ele.png",
+          "image/deer.png",
+        ],
+        [
+          "image/elephant.png",
+          "image/fox.png",
+          "image/gazelle.png",
+          "image/gibbon.png",
+          "image/giraffe.png",
+          "image/gorilla.png",
+          "image/hawk.png",
+          "image/hippo.png",
+          "image/hornbill.png",
+          "image/horse.png",
+          "image/impala.png",
+          "image/kangaroo.png",
+          "image/flamingo.png",
+        ],
+        [
+          "image/koala.png",
+          "image/lemur.png",
+          "image/leopard.png",
+          "image/lion.png",
+          "image/littlebear.png",
+          "image/long-maned.png",
+          "image/malayan.png",
+          "image/mini-horse.png",
+          "image/monkey.png",
+          "image/mou.png",
+          "image/mountain.png",
+          "image/pangolin.png",
+          "image/otter.png",
+        ],
+        [
+          "image/parrot.png",
+          "image/pelican.png",
+          "image/penguin.png",
+          "image/pig.png",
+          "image/red.png",
+          "image/rhinoceros.png",
+          "image/small-clawed.png",
+          "image/spoonbill.png",
+          "image/sulcata.png",
+          "image/water.png",
+          "image/whitehand.png",
+          "image/wild.png",
+          "image/tiger.png",
+        ],
+      ];
+
+      // 每一個圖片畫廊
+      galleryImages.forEach((images, index) => {
+        let currentImageIndex = 0;
+        setInterval(() => {
+          const imageElement = document.getElementById("img" + (index + 1));
+          imageElement.src = images[currentImageIndex];
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>

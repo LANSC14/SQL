@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>關於我們</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffffff;
+      }
+      .flex {
+        display: flex;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .container {
+        position: relative;
+        height: 500px;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        background-color: rgba(107, 104, 104, 0.5); /* 暗化效果 */
+        padding-left: 80px;
+      }
+
+      .nav-link {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .background-image {
+        height: 100%;
+        width: 100%;
+      }
+      #scroll-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      #scroll-to-top:hover {
+        background-color: #0056b3;
+      }
+
+      #scroll-to-top span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div
+        class="flex"
+        style="
+          background-color: rgba(231, 232, 231, 0.5); /* 半透明背景 */
+          backdrop-filter: blur(10px); /* 模糊效果 */
+          -webkit-backdrop-filter: blur(10px); /* 針對舊版Safari瀏覽器的支持 */
+          padding: 20px;
+          height: 80px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 100;
+        "
+      >
+        <a href="index.html" class="flex nav-link">
+          <img
+            src="image/head.png"
+            width="70px"
+            height="70px"
+            style="margin-left: 100px; margin-top: 10px"
+          />
+          <div style="margin-left: 20px; margin-top: 0px">
+            <h1>動物園(Zoo)</h1>
+          </div>
+        </a>
+      </div>
+
+      <div style="height: 120px"></div>
+
+      <div class="container">
+        <div class="navbar">
+          <div>☰&nbsp;</div>
+          <div class="link">
+            <a href="index.html" class="nav-link">首頁</a>
+          </div>
+          <div>&nbsp;☞&nbsp;</div>
+          <div>關於我們</div>
+        </div>
+        <img src="image/about.png" class="background-image" />
+      </div>
+    </div>
+
+    <h3 align="center">
+      ER圖
+      <p><img src="image/er.jpg" height="200px" width="1000px" /></p>
+    </h3>
+
+    <h3 align="center">
+      網頁地圖
+      <p><img src="image\MAP.jpg" height="500px" width="700px" /></p>
+    </h3>
+
+    <table border="1" align="center">
+      <tbody>
+        <tr align="center">
+          <td width="125">姓名</td>
+          <td width="125">學號</td>
+          <td width="125">班級</td>
+        </tr>
+
+        <tr align="center">
+          <td width="125">劉祐誠</td>
+          <td width="125">410001092</td>
+          <td width="125">資圖3A</td>
+        </tr>
+
+        <tr align="center">
+          <td width="125">藍聖欽</td>
+          <td width="125">410000854</td>
+          <td width="125">資圖3A</td>
+        </tr>
+
+        <tr align="center">
+          <td width="125">吳秉勳</td>
+          <td width="125">410000433</td>
+          <td width="125">資圖3A</td>
+        </tr>
+
+        <tr align="center">
+          <td width="125">游博丞</td>
+          <td width="125">410000912</td>
+          <td width="125">資圖3A</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>最新消息</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffffff;
+      }
+      .flex {
+        display: flex;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .container {
+        position: relative;
+        height: 500px;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        background-color: rgba(107, 104, 104, 0.5); /* 暗化效果 */
+        padding-left: 80px;
+      }
+
+      .nav-link {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .background-image {
+        height: 100%;
+        width: 100%;
+      }
+      #scroll-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      #scroll-to-top:hover {
+        background-color: #0056b3;
+      }
+
+      #scroll-to-top span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div
+        class="flex"
+        style="
+          background-color: rgba(231, 232, 231, 0.5); /* 半透明背景 */
+          backdrop-filter: blur(10px); /* 模糊效果 */
+          -webkit-backdrop-filter: blur(10px); /* 針對舊版Safari瀏覽器的支持 */
+          padding: 20px;
+          height: 80px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 100;
+        "
+      >
+        <a href="index.html" class="flex nav-link">
+          <img
+            src="image/head.png"
+            width="70px"
+            height="70px"
+            style="margin-left: 100px; margin-top: 10px"
+          />
+          <div style="margin-left: 20px; margin-top: 0px">
+            <h1>動物園(Zoo)</h1>
+          </div>
+        </a>
+      </div>
+
+      <div style="height: 120px"></div>
+
+      <div class="container">
+        <div class="navbar">
+          <div>☰&nbsp;</div>
+          <div class="link">
+            <a href="index.html" class="nav-link">首頁</a>
+          </div>
+          <div>&nbsp;☞&nbsp;</div>
+          <div>活動</div>
+        </div>
+        <img src="image/background.png" class="background-image" />
+      </div>
+      <div class="flex column" style="width: 100%">
+        <div style="margin-left: 20%; margin-top: 20px">
+          <h3>共有多筆資料</h3>
+        </div>
+        <div
+          style="
+            width: 60%; /* 設定分隔線的長度為容器寬度的80% */
+            height: 2px; /* 設定分隔線的厚度 */
+            background-color: #d3d3d3; /* 淺灰色 */
+            margin: 20px auto; /* 上下邊距20px，自動左右邊距實現居中 */
+          "
+        ></div>
+        <div style="height: 200px; width: 100%" class="flex">
+          <a
+            href="new_bearcat.html"
+            style="
+              margin: 10px;
+              margin-left: 20%;
+              color: #000;
+              text-decoration: none;
+              flex-wrap: nowrap;
+            "
+            class="flex"
+          >
+            <img
+              src="image/bearcat.png"
+              height="100%"
+              width="100%"
+              style="
+                height: auto;
+                width: auto;
+                max-width: 50%;
+                border-radius: 12%;
+              "
+            />
+            <div style="margin-left: 20px; margin-top: 10px">
+              <h3>
+                小熊貓降臨!這個迷人的小動物以其可愛的外表和活潑的個性而聞名。
+                <br />它們被認為是竹林中的守護神，因為它們主要以竹子為食。
+              </h3>
+            </div>
+          </a>
+        </div>
+        <div
+          style="
+            width: 60%; /* 設定分隔線的長度為容器寬度的80% */
+            height: 2px; /* 設定分隔線的厚度 */
+            background-color: #d3d3d3; /* 淺灰色 */
+            margin: 20px auto; /* 上下邊距20px，自動左右邊距實現居中 */
+          "
+        ></div>
+        <div style="height: 200px; width: 100%" class="flex">
+          <a
+            href="new_map.html"
+            style="
+              margin: 10px;
+              margin-left: 20%;
+              color: #000;
+              text-decoration: none;
+              flex-wrap: nowrap;
+            "
+            class="flex"
+          >
+            <img
+              src="image/map.png"
+              height="100%"
+              width="100%"
+              style="
+                height: auto;
+                width: auto;
+                max-width: 50%;
+                border-radius: 12%;
+              "
+            />
+            <div style="margin-left: 20px; margin-top: 10px">
+              <h3>
+                園區整修！我們精心擬定了一項令人振奮的計劃，旨在提升這個美麗的地方。<br />
+                新的設施、花園和娛樂區將帶來更多樂趣和舒適，讓您享受更豐富的休閒體驗。<br />
+                歡迎您參觀我們的改造，一同見證園區的嶄新面貌！
+              </h3>
+            </div>
+          </a>
+        </div>
+        <div
+          style="
+            width: 60%; /* 設定分隔線的長度為容器寬度的80% */
+            height: 2px; /* 設定分隔線的厚度 */
+            background-color: #d3d3d3; /* 淺灰色 */
+            margin: 20px auto; /* 上下邊距20px，自動左右邊距實現居中 */
+          "
+        ></div>
+        <div style="height: 200px; width: 100%" class="flex">
+          <a
+            href="new_shop.html"
+            style="
+              margin: 10px;
+              margin-left: 20%;
+              color: #000;
+              text-decoration: none;
+              flex-wrap: nowrap;
+            "
+            class="flex"
+          >
+            <img
+              src="image/rest.png"
+              height="100%"
+              width="100%"
+              style="
+                height: auto;
+                width: auto;
+                max-width: 50%;
+                border-radius: 12%;
+              "
+            />
+            <div style="margin-left: 20px; margin-top: 10px">
+              <h3>
+                動物園內的餐廳開幕！現在，您可以在探索動物世界的同時品嚐美味的料理。<br />
+                我們的餐廳提供多種美食選擇，讓您在與動物相處的過程中享受美味。<br />
+                歡迎光臨動物園餐廳，開啟美味之旅！
+              </h3>
+            </div>
+          </a>
+        </div>
+        <div
+          style="
+            width: 60%; /* 設定分隔線的長度為容器寬度的80% */
+            height: 2px; /* 設定分隔線的厚度 */
+            background-color: #d3d3d3; /* 淺灰色 */
+            margin: 20px auto; /* 上下邊距20px，自動左右邊距實現居中 */
+          "
+        ></div>
+      </div>
+      <div style="height: 200px; background-color: #e7e8e7">
+        <div
+          class="flex"
+          style="padding: 20px; justify-content: center; margin-top: 20px"
+        >
+          <div class="flex">
+            <div>
+              <img src="image/head.png" width="70px" height="70px" />
+            </div>
+            <div style="margin-left: 5px; margin-top: 20px; margin-left: 10px">
+              動物園(Zoo)
+            </div>
+          </div>
+          <div class="column" style="margin-left: 300px">
+            <div>地址：116台北市文山區新光路二段30號</div>
+            <div>電話：0229382300</div>
+            <div>更新日期 2023-11-17</div>
+          </div>
+        </div>
+        <div>
+          <hr
+            style="border-color: black; border-width: 2px; border-style: solid"
+          />
+          <div class="flex" style="justify-content: center">
+            Copyright © 2023 Zoo Inc. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="scroll-to-top" onclick="scrollToTop()">
+      <span>TOP</span>
+    </button>
+    <script>
+      // 當用戶滾動頁面時，顯示或隱藏按鈕
+      window.onscroll = function () {
+        var button = document.getElementById("scroll-to-top");
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      };
+
+      // 當按鈕被點擊時，滾動到頂部
+      function scrollToTop() {
+        document.body.scrollTop = 0; // 對於一些瀏覽器
+        document.documentElement.scrollTop = 0; // 對於現代瀏覽器
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新店開幕</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffffff;
+      }
+      .flex {
+        display: flex;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .nav-link {
+        color: #000;
+        text-decoration: none;
+      }
+      #scroll-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      #scroll-to-top:hover {
+        background-color: #0056b3;
+      }
+
+      #scroll-to-top span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #myButton {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        text-decoration: none; /* 去掉下滑線 */
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer; /* 手圖案 */
+        transition: background-color 0.8s, transform 0.3s; /* 過度效果 */
+      }
+
+      #myButton:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex column">
+      <div
+        class="flex"
+        style="
+          background-color: rgba(231, 232, 231, 0.5); /* 半透明背景 */
+          backdrop-filter: blur(10px); /* 模糊效果 */
+          -webkit-backdrop-filter: blur(10px); /* 針對舊版Safari瀏覽器的支持 */
+          padding: 20px;
+          height: 80px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 100;
+        "
+      >
+        <a href="index.html" class="flex nav-link">
+          <img
+            src="image/head.png"
+            width="70px"
+            height="70px"
+            style="margin-left: 100px; margin-top: 10px"
+          />
+          <div style="margin-left: 20px; margin-top: 0px">
+            <h1>動物園(Zoo)</h1>
+          </div>
+        </a>
+      </div>
+      <div style="height: 120px"></div>
+      <div class="flex" style="background-color: rgb(177, 176, 174)">
+        <div style="margin-left: 80px">☰&nbsp;</div>
+        <div>
+          <a href="index.html" class="nav-link">首頁</a>
+        </div>
+        <div>&nbsp;☞&nbsp;</div>
+        <div>活動</div>
+        <div>&nbsp;☞&nbsp;</div>
+        <div><a href="new.html" class="nav-link">最新消息</a></div>
+      </div>
+      <div
+        style="
+          height: 200px;
+          background-color: rgb(247, 246, 246);
+          align-items: center;
+          justify-content: center;
+        "
+        class="flex"
+      >
+        <div>
+          <h1>
+            動物園內的餐廳開幕！現在，您可以在探索動物世界的同時品嚐美味的料理。<br />
+            我們的餐廳提供多種美食選擇，讓您在與動物相處的過程中享受美味。<br />
+            歡迎光臨動物園餐廳，開啟美味之旅！
+          </h1>
+        </div>
+      </div>
+      <div class="flex" style="margin-top: 20px">
+        <div style="margin-left: 20%">發佈日期:2023-4-17</div>
+        <div style="margin-left: 20px">更新日期:2023-4-17</div>
+        <div style="margin-left: 20px">(• ω• )觀看次數:4777</div>
+      </div>
+
+      <div
+        style="
+          width: 60%; /* 設定分隔線的長度為容器寬度的80% */
+          height: 2px; /* 設定分隔線的厚度 */
+          background-color: #d3d3d3; /* 淺灰色 */
+          margin: 20px auto; /* 上下邊距20px，自動左右邊距實現居中 */
+        "
+      ></div>
+      <div style="margin-top: 10px; margin-left: 20%">
+        歡迎來到我們全新開幕的動物園餐廳！這是一個絕佳的機會，讓您在探索動物世界的同時，品味美味的料理。我們餐廳的使命是為<br />您帶來一場獨一無二的用餐體驗，讓您的動物園之旅更加豐富多彩。<br /><br />
+        在這裡，您將品嚐到各種令人垂涎的美食，從口感豐富的主菜到令人陶醉的甜點，我們的菜單將滿足您的味蕾。無論是一個親子家<br />庭日、與摯友共度的時光，還是浪漫的約會，我們的餐廳都能滿足您的需求，提供獨特而美味的餐飲體驗。<br /><br />
+        我們的廚師團隊精心設計了菜單，融合了當地美食和國際風味，確保每一道菜都是經典與創新的完美結合。此外，我們的用餐環境<br />也相當舒適，提供壯觀的景觀，讓您能夠欣賞到動物園中的自然美景。<br /><br />
+        我們致力於提供卓越的服務和美味的食物，並保證您在我們的餐廳中度過愉快的時光。我們瞭解您對食物品質和用餐體驗的期望，<br />並將不遺餘力地超越您的期望。<br /><br />
+        所以，請來訪我們的動物園餐廳，一同享受這個獨特的用餐體驗。無論是觀賞可愛的動物、度過愉快的時光，還是品味美食，我們<br />都迫不及待地期待著您的光臨。謝謝您的支持，讓我們一同創造難忘的回憶！
+        <br />動物園上
+      </div>
+      <div
+        style="
+          width: 60%; /* 設定分隔線的長度為容器寬度的80% */
+          height: 2px; /* 設定分隔線的厚度 */
+          background-color: #d3d3d3; /* 淺灰色 */
+          margin: 20px auto; /* 上下邊距20px，自動左右邊距實現居中 */
+        "
+      ></div>
+      <div class="flex" style="justify-content: center; align-items: center">
+        <img src="image/rest.png" height="500px" width="600px" />
+      </div>
+      <div
+        style="
+          width: 60%; /* 設定分隔線的長度為容器寬度的80% */
+          height: 2px; /* 設定分隔線的厚度 */
+          background-color: #d3d3d3; /* 淺灰色 */
+          margin: 20px auto; /* 上下邊距20px，自動左右邊距實現居中 */
+        "
+      ></div>
+      <div>
+        <div>
+          <div
+            class="flex"
+            style="
+              align-items: center;
+              justify-content: center;
+              height: 100px;
+              margin-bottom: 50px;
+            "
+          >
+            <a
+              href="new.html"
+              id="myButton"
+              onclick="alert('恭喜你成功點擊了按鈕！(*ˇωˇ*人)你將前往新的頁面')"
+            >
+              返回列表
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="height: 200px; background-color: #e7e8e7">
+        <div
+          class="flex"
+          style="padding: 20px; justify-content: center; margin-top: 20px"
+        >
+          <div class="flex">
+            <div>
+              <img src="image/head.png" width="70px" height="70px" />
+            </div>
+            <div style="margin-left: 5px; margin-top: 20px; margin-left: 10px">
+              動物園(Zoo)
+            </div>
+          </div>
+          <div class="column" style="margin-left: 300px">
+            <div>地址：116台北市文山區新光路二段30號</div>
+            <div>電話：0229382300</div>
+            <div>更新日期 2023-11-17</div>
+          </div>
+        </div>
+        <div>
+          <hr
+            style="border-color: black; border-width: 2px; border-style: solid"
+          />
+          <div class="flex" style="justify-content: center">
+            Copyright © 2023 Zoo Inc. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="scroll-to-top" onclick="scrollToTop()">
+      <span>TOP</span>
+    </button>
+    <script>
+      // 當用戶滾動頁面時，顯示或隱藏按鈕
+      window.onscroll = function () {
+        var button = document.getElementById("scroll-to-top");
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      };
+
+      // 當按鈕被點擊時，滾動到頂部
+      function scrollToTop() {
+        document.body.scrollTop = 0; // 對於一些瀏覽器
+        document.documentElement.scrollTop = 0; // 對於現代瀏覽器
+      }
+    </script>
+  </body>
+</html>
